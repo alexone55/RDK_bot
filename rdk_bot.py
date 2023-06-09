@@ -120,7 +120,7 @@ def choice_handler(message):
     elif message.text == "Пресс-служба РДК":
         recruit_bot.send_message(message.from_user.id, "Пресс-служба\n\n"
                                                        "Для общения с Пресс-службой у нас создан отдельный аккаунт \n"
-                                                       "@rdksupport \n\n"
+                                                       "@rdkpress \n\n"
                                                        "При обращении необходимо сообщить и предоставить: \n"
                                                        "1) Название СМИ или иного медиаресурса; \n"
                                                        "2) Формат предлагаемого интервью: видео под запись/текст/прямой эфир и т.д. \n"
@@ -217,7 +217,7 @@ def choice_handler(message):
     elif message.text == "Press service RVC":
         recruit_bot.send_message(message.from_user.id, "Press service\n\n"
                                                        "To communicate with the Press Service, we have created a separate account \n"
-                                                       "@rdksupport \n\n"
+                                                       "@rdkpress \n\n"
                                                        "When applying, you must report and provide: \n"
                                                        "1) The name of the mass media or other media resource; \n"
                                                        "2) The format of the proposed interview: video for recording / text / live broadcast, etc. \n"
