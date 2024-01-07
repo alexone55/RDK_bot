@@ -74,7 +74,8 @@ def handle_join_information(message):
         markup = types.ReplyKeyboardMarkup(row_width=1)
         btn_1 = types.KeyboardButton("Оставить заявку / требования к кандидату")
         btn_2 = types.KeyboardButton("Что необходимо сделать до отъезда, необходимые документы")
-        markup.add(btn_1, btn_2)
+        btn_3 = types.KeyboardButton("Перевод к нам в подразделение")
+        markup.add(btn_1, btn_2, btn_3)
         recruit_bot.send_message(message.from_user.id, "Суть обращения:", parse_mode="html",
                                  reply_markup=markup)
 
@@ -101,6 +102,16 @@ def handle_documents_information(message):
                                  "- Сделать второй загранпаспорт - на случай утери и прочих непредвиденных обстоятельств. Любой гражданин РФ может одновременно иметь два заграничных паспорта.",
                                  parse_mode="html", reply_markup=markup)
 
+@recruit_bot.message_handler(func=lambda message: message.text in ["Перевод к нам в подразделение"])
+def handle_documents_information(message):
+    if message.text == "Перевод к нам в подразделение":
+        markup = types.ReplyKeyboardMarkup(row_width=1)
+        btn_1 = types.KeyboardButton("Назад")
+        markup.add(btn_1)
+        recruit_bot.send_message(message.from_user.id,
+                                 "Перевестись к к нам в подразделение могут только военнослужащие пограничных сил и ССО. "
+                                 "Если вы являетесь таковым, то также напишите к нам в бот @rusvolcorps",
+                                 parse_mode="html", reply_markup=markup)
 
 @recruit_bot.message_handler()
 def handle_financial_information(message):
